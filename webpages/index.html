@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Motive</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="brand">
+            <img id="motive-logo" src="../images/lightmode.png" alt="Motive logo">
+            <span class="brand-name">MOTIVE</span>
+        </div>
+
+        <p>Browser Code Playground</p>
+
+        <button id="theme-button">🌙</button>
+    </header>
+
+    <main>
+        <section>
+
+            <h2>Workspace</h2>
+
+            <div class="editors">
+
+                <div class="editor-panel">
+                    <div class="editor-header">
+                        <label>HTML</label>
+                        <span class="editor-dot"></span>
+                    </div>
+
+                    <textarea id="html-code" class="code-editor"></textarea>
+
+                    <span id="html-count"></span>
+                </div>
+
+                <div class="editor-panel">
+                    <div class="editor-header">
+                        <label>CSS</label>
+                        <span class="editor-dot"></span>
+                    </div>
+
+                    <textarea id="css-code" class="code-editor"></textarea>
+
+                    <span id="css-count"></span>
+                </div>
+
+                <div class="editor-panel">
+                    <div class="editor-header">
+                        <label>JavaScript</label>
+                        <span class="editor-dot"></span>
+                    </div>
+
+                    <textarea id="js-code" class="code-editor"></textarea>
+
+                    <span id="js-count"></span>
+                </div>
+
+            </div>
+
+            <p id="save-status">Saved</p>
+
+            <h3>Preview</h3>
+
+            <iframe id="preview"></iframe>
+
+            <div class="button-container">
+                <button id="run-button">Run</button>
+                <button id="clear-button">Clear</button>
+                <button id="download-button">Download</button>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="../scripts/main.js"></script>
+
+</body>
+</html>
