@@ -231,7 +231,7 @@ themeButton.addEventListener("click", function() {
 
         localStorage.setItem("theme", "dark");
 
-        logo.src = "../images/darkmode.png";
+        logo.src = "images/darkmode.png";
 
     } else {
 
@@ -239,7 +239,7 @@ themeButton.addEventListener("click", function() {
 
         localStorage.setItem("theme", "light");
 
-        logo.src = "../images/lightmode.png";
+        logo.src = "images/lightmode.png";
     }
 
 });
