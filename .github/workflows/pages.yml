@@ -35,9 +35,12 @@ jobs:
           cp -r scripts public/scripts
           cp -r images public/images
 
+          # Fix paths in index.html
           sed -i 's#../styles/style.css#styles/style.css#g' public/index.html
           sed -i 's#../scripts/main.js#scripts/main.js#g' public/index.html
           sed -i 's#../images/lightmode.png#images/lightmode.png#g' public/index.html
+
+          # Fix image paths in main.js
           sed -i 's#../images/darkmode.png#images/darkmode.png#g' public/scripts/main.js
           sed -i 's#../images/lightmode.png#images/lightmode.png#g' public/scripts/main.js
 
