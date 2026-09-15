@@ -39,6 +39,7 @@ jobs:
           sed -i 's#../scripts/main.js#scripts/main.js#g' public/index.html
           sed -i 's#../images/lightmode.png#images/lightmode.png#g' public/index.html
           sed -i 's#../images/darkmode.png#images/darkmode.png#g' public/scripts/main.js
+          sed -i 's#../images/lightmode.png#images/lightmode.png#g' public/scripts/main.js
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
