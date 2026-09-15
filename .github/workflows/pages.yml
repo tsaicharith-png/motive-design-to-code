@@ -1,0 +1,53 @@
+name: Deploy Motive to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Prepare website
+        run: |
+          mkdir public
+
+          cp webpages/index.html public/index.html
+          cp -r styles public/styles
+          cp -r scripts public/scripts
+          cp -r images public/images
+
+          sed -i 's#../styles/style.css#styles/style.css#g' public/index.html
+          sed -i 's#../scripts/main.js#scripts/main.js#g' public/index.html
+          sed -i 's#../images/lightmode.png#images/lightmode.png#g' public/index.html
+          sed -i 's#../images/darkmode.png#images/darkmode.png#g' public/scripts/main.js
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
